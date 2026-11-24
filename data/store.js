@@ -182,22 +182,52 @@ const initialData = {
   }
 };
 
+// Determine writable path: in Vercel Serverless environment, /var/task is read-only.
+// /tmp is the only writable directory on AWS Lambda / Vercel Serverless Functions.
+const BUNDLED_DATA_FILE = path.join(__dirname, 'site_data.json');
+const WRITABLE_DATA_FILE = process.env.VERCEL ? path.join('/tmp', 'site_data.json') : BUNDLED_DATA_FILE;
+
+// Memory cache to maintain state across invocations in the same warm serverless instance
+let memoryCache = null;
+
 function getSiteData() {
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
+  if (memoryCache) return memoryCache;
+
+  // On Vercel, if /tmp/site_data.json doesn't exist yet, seed it from bundled site_data.json
+  if (process.env.VERCEL && !fs.existsSync(WRITABLE_DATA_FILE)) {
+    try {
+      if (fs.existsSync(BUNDLED_DATA_FILE)) {
+        const bundled = fs.readFileSync(BUNDLED_DATA_FILE, 'utf-8');
+        fs.writeFileSync(WRITABLE_DATA_FILE, bundled, 'utf-8');
+      }
+    } catch (e) {
+      console.warn("Could not copy bundled data to /tmp:", e);
+    }
   }
-  try {
-    const raw = fs.readFileSync(DATA_FILE, 'utf-8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error("Error reading site data, returning initial data", err);
-    return initialData;
+
+  const targetPath = fs.existsSync(WRITABLE_DATA_FILE) ? WRITABLE_DATA_FILE : BUNDLED_DATA_FILE;
+
+  if (fs.existsSync(targetPath)) {
+    try {
+      const raw = fs.readFileSync(targetPath, 'utf-8');
+      memoryCache = JSON.parse(raw);
+      return memoryCache;
+    } catch (err) {
+      console.error("Error reading site data, returning initial data", err);
+    }
   }
+
+  memoryCache = JSON.parse(JSON.stringify(initialData));
+  return memoryCache;
 }
 
 function saveSiteData(data) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+  memoryCache = data;
+  try {
+    fs.writeFileSync(WRITABLE_DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn("Could not persist to disk, retained in memoryCache:", err.message);
+  }
 }
 
 module.exports = {
