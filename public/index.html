@@ -388,16 +388,12 @@
           <p id="sectionGallerySubtitle" class="text-muted text-sm mt-1">Archival records, classroom gatherings, and institutional milestones.</p>
         </div>
         
-        <!-- Carousel Controls -->
-        <div class="flex items-center gap-2 self-start sm:self-auto">
-          <button id="carouselPrevBtn" onclick="prevCarouselSlide()" aria-label="Previous Slide" class="p-2 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] transition tactile-card">
+        <!-- Clean Minimal Carousel Controls -->
+        <div class="flex items-center gap-1.5 self-start sm:self-auto">
+          <button id="carouselPrevBtn" onclick="prevCarouselSlide()" aria-label="Previous Slide" class="p-2 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] active:scale-95 transition tactile-card">
             <svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
           </button>
-          <button id="carouselPlayPauseBtn" onclick="toggleCarouselAutoplay()" aria-label="Toggle Autoplay" class="px-2.5 py-1.5 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] transition text-xs font-mono text-muted flex items-center gap-1.5">
-            <span id="carouselAutoplayIndicator" class="w-2 h-2 rounded-full bg-hunter animate-pulse"></span>
-            <span id="carouselAutoplayText">Auto (5s)</span>
-          </button>
-          <button id="carouselNextBtn" onclick="nextCarouselSlide()" aria-label="Next Slide" class="p-2 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] transition tactile-card">
+          <button id="carouselNextBtn" onclick="nextCarouselSlide()" aria-label="Next Slide" class="p-2 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] active:scale-95 transition tactile-card">
             <svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </button>
         </div>
@@ -571,7 +567,6 @@
         nextCarouselSlide();
       }, 5000);
       isAutoplayActive = true;
-      updateAutoplayUI();
     }
 
     function stopCarouselAutoplay() {
@@ -581,34 +576,9 @@
       }
     }
 
-    function toggleCarouselAutoplay() {
-      if (isAutoplayActive) {
-        stopCarouselAutoplay();
-        isAutoplayActive = false;
-      } else {
-        startCarouselAutoplay();
-        isAutoplayActive = true;
-      }
-      updateAutoplayUI();
-    }
-
     function resetCarouselTimer() {
       if (isAutoplayActive) {
         startCarouselAutoplay();
-      }
-    }
-
-    function updateAutoplayUI() {
-      const text = document.getElementById('carouselAutoplayText');
-      const dot = document.getElementById('carouselAutoplayIndicator');
-      if (text && dot) {
-        if (isAutoplayActive) {
-          text.textContent = "Auto (5s)";
-          dot.className = "w-2 h-2 rounded-full bg-hunter animate-pulse";
-        } else {
-          text.textContent = "Paused";
-          dot.className = "w-2 h-2 rounded-full bg-muted";
-        }
       }
     }
 
