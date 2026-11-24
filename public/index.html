@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bahar Zubair — Educator, Mentor & Civic Trustee</title>
   <meta name="description" content="Assistant Professor & Head of Accounting, Omargani M.E.S. College, Chattogram. Over 30 years of teaching, digital lectures, and institutional leadership.">
-  <link rel="canonical" href="https://baharzubair.com/">
+  <link rel="canonical" href="https://baharzubair.eu.org/">
 
   <!-- Favicon Suite (Multi-resolution & SVG monogram) -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -554,8 +554,10 @@
       document.getElementById('navAvatar').src = p.avatarUrl;
       document.getElementById('heroPortrait').src = p.avatarUrl;
 
-      document.getElementById('heroRoleTag').textContent = isBn ? "হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা" : "Accounting & Business Education";
-      document.getElementById('heroDeptTag').textContent = isBn ? "হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা" : "Accounting & Business Education";
+      const roleTag = document.getElementById('heroRoleTag');
+      if (roleTag) roleTag.textContent = isBn ? "হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা" : "Accounting & Business Education";
+      const deptTag = document.getElementById('heroDeptTag');
+      if (deptTag) deptTag.textContent = isBn ? "হিসাববিজ্ঞান ও ব্যবসায় শিক্ষা" : "Accounting & Business Education";
       
       const heroName = document.querySelector('h1');
       if (heroName) {
