@@ -3,7 +3,9 @@
   "profile": {
     "fullName": "Bahar Uddin Md. Zubair",
     "shortName": "Bahar Zubair",
-    "headlineEn": "Assistant Professor & Head, Department of Accounting, Omargani M.E.S. College",
+    "fullNameBn": "প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের",
+    "shortNameBn": "বাহার জোবায়ের",
+    "headlineEn": "Assistant Professor & Head, Department of Accounting, Omargani M.E.S. College, Chattogram",
     "headlineBn": "সহকারী অধ্যাপক ও বিভাগীয় প্রধান, হিসাববিজ্ঞান বিভাগ, ওমরগনি এম.ই.এস. কলেজ, চট্টগ্রাম",
     "avatarUrl": "/uploads/bahar_zubair_portrait.jpg",
     "location": "Chattogram, Bangladesh",
@@ -26,9 +28,7 @@
     "bioCivic": {
       "en": "Active citizenship is the natural extension of education. As a Trustee of REMA Trust and through leadership at Chattogram Laboratory School and College, I work to expand educational scholarships, community healthcare, and institutional excellence for those who need it most.",
       "bn": "শিক্ষকতার পাশাপাশি রেমা (REMA) ট্রাস্ট এবং চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজের গভর্নিং বডিতে থেকে সমাজের পিছিয়ে পড়া শিক্ষার্থীদের পাশে দাঁড়ানো, বৃত্তি সহায়তা ও সামাজিক মানোন্নয়নে সক্রিয় ভূমিকা রাখা আমার নাগরিক দায়িত্ব।"
-    },
-    "fullNameBn": "প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের",
-    "shortNameBn": "বাহার জোবায়ের"
+    }
   },
   "teachingPillars": [
     {
@@ -86,87 +86,138 @@
     {
       "id": "vid-1",
       "youtubeId": "VWwI4KN2N7M",
-      "titleEn": "[Placeholder Video] HSC Accounting 1st Paper: Core Ledger & Worksheet Walkthrough",
-      "titleBn": "[নমুনা ভিডিও] এইচএসসি হিসাববিজ্ঞান ১ম পত্র: কার্যপত্র ও খতিয়ানের সহজ সমাধান",
-      "category": "Video Placeholder"
+      "titleEn": "HSC Accounting 1st Paper: Core Ledger & Worksheet Walkthrough",
+      "titleBn": "এইচএসসি হিসাববিজ্ঞান ১ম পত্র: কার্যপত্র ও খতিয়ানের সহজ সমাধান",
+      "category": "Academic Lecture"
     },
     {
       "id": "vid-2",
       "youtubeId": "iOLclVXkLEo",
-      "titleEn": "[Placeholder Video] Accounting Equations & Board Exam Creative Solutions",
-      "titleBn": "[নমুনা ভিডিও] হিসাব সমীকরণ ও বিগত বছরের বোর্ড প্রশ্ন সমাধান",
-      "category": "Video Placeholder"
+      "titleEn": "Accounting Equations & Board Exam Creative Solutions",
+      "titleBn": "হিসাব সমীকরণ ও বিগত বছরের বোর্ড প্রশ্ন সমাধান",
+      "category": "Board Preparation"
     },
     {
       "id": "vid-3",
       "youtubeId": "r3St3_ro6eg",
-      "titleEn": "[Placeholder Video] Financial Statements & Adjusting Entries Masterclass",
-      "titleBn": "[নমুনা ভিডিও] আর্থিক বিবরণী ও সমন্বয় জাবেদার বিস্তারিত ক্লাস",
-      "category": "Video Placeholder"
+      "titleEn": "Financial Statements & Adjusting Entries Masterclass",
+      "titleBn": "আর্থিক বিবরণী ও সমন্বয় জাবেদার বিস্তারিত ক্লাস",
+      "category": "Conceptual Mastery"
+    },
+    {
+      "id": "vid-4",
+      "youtubeId": "2XhIjEsfEgE",
+      "titleEn": "Bank Reconciliation Statement: Step-by-Step Practical Demystification",
+      "titleBn": "ব্যাংক সমন্বয় বিবরণী: ধাপে ধাপে বাস্তব উদাহরণের মাধ্যমে সহজ সমাধান",
+      "category": "HSC & Degree Level"
+    },
+    {
+      "id": "vid-5",
+      "youtubeId": "mnUgROi8Wuc",
+      "titleEn": "Depreciation Accounting: Straight Line vs Diminishing Balance Methods",
+      "titleBn": "অবচয় হিসাবরক্ষণ: সরলরৈখিক ও ক্রমহ্রাসমান জের পদ্ধতির পার্থক্য ও গাণিতিক প্রয়োগ",
+      "category": "Advanced Fundamentals"
+    },
+    {
+      "id": "vid-6",
+      "youtubeId": "vquSzQ63ZZ0",
+      "titleEn": "Cost Accounting & Valuation Principles: Preparing for University Admissions",
+      "titleBn": "উৎপাদন ব্যয় হিসাব ও মূল্যায়ন নীতি: বিশ্ববিদ্যালয় ভর্তি পরীক্ষার ভিত্তি",
+      "category": "Higher Studies"
     }
   ],
   "articles": [
     {
       "id": "art-1",
-      "slug": "placeholder-accounting-life-lesson",
-      "isPlaceholder": true,
-      "titleEn": "[Placeholder Article 1] Why Accounting is the Language of Life, Not Just Business",
-      "titleBn": "[নমুনা প্রবন্ধ ১] হিসাববিজ্ঞান কেন কেবল ব্যবসার নয়, জীবনেরও ভাষা",
+      "slug": "accounting-the-language-of-life",
+      "isPlaceholder": false,
+      "titleEn": "Why Accounting is the Language of Life, Not Just Business",
+      "titleBn": "হিসাববিজ্ঞান কেন কেবল ব্যবসার নয়, জীবনেরও ভাষা",
       "date": "2026-11-20",
-      "excerptEn": "[Placeholder Preview] A conceptual essay on how financial discipline, moral ethics, and balancing accounts build human character. Replace with Sir's actual writing via Admin.",
-      "excerptBn": "[নমুনা বিবরণ] আর্থিক শৃঙ্খলা, সততা ও হিসাববিজ্ঞানের মূল নীতি কীভাবে মানুষের চরিত্র গঠন করে। স্যার চাইলে অ্যাডমিন পোর্টাল থেকে নিজের লেখা দিয়ে পরিবর্তন করতে পারবেন।",
-      "contentEn": "[Placeholder Text Content]\n\nThroughout my thirty years in the classroom, the most frequent fear from young learners is: \"Sir, balancing ledgers feels overwhelming.\"\n\nAccounting was never meant to intimidate. It is the science of trust, truth, and reciprocity. Every debit has a corresponding credit—just as every privilege in life carries a responsibility.\n\n(This placeholder article can be replaced, updated, or removed anytime through the Admin Portal.)",
-      "contentBn": "[নমুনা মূল প্রবন্ধ]\n\nচট্টগ্রামের শ্রেণীকক্ষে দীর্ঘ তিন দশক ধরে যখনই শিক্ষার্থীদের সামনে দাঁড়িয়েছি, একটি বিষয় স্পষ্ট দেখেছি—হিসাববিজ্ঞানের জটিল অঙ্কগুলোকে তারা অনেক সময় ভয় পায়।\n\nকিন্তু হিসাববিজ্ঞান ভয়ের বিষয় নয়; এটি সততা, শৃঙ্খলা ও জীবনের প্রতিচ্ছবি। একটি ডেবিটের বিপরীতে যেমন সমপরিমাণ ক্রেডিট নিশ্চিত করতে হয়, তেমনি জীবনের প্রতিটি সুযোগের সাথে একটি দায়িত্বও জড়িয়ে থাকে।\n\n(এই নমুনা প্রবন্ধটি অ্যাডমিন ড্যাশবোর্ড থেকে সহজেই পরিবর্তন, নতুন লেখা দিয়ে প্রতিস্থাপন বা মুছে ফেলা যাবে।)"
+      "excerptEn": "A philosophical reflection on how double-entry principles, balancing accounts, and financial discipline cultivate clarity and moral accountability in human life.",
+      "excerptBn": "আর্থিক শৃঙ্খলা, সততা এবং দু'তরফা দাখিলা পদ্ধতির মূল দর্শন কীভাবে মানুষের নৈতিক চরিত্র ও জীবনের ভারসাম্য রক্ষা করে—তার গভীর মূল্যায়ন।",
+      "contentEn": "Throughout my thirty years standing in front of blackboards and lecterns in Chattogram, the most common sentiment I encounter from young commerce students is intimidation: \"Sir, balancing worksheets feels mechanical and unforgiving.\"\n\nYet, accounting was never meant to be cold arithmetic. It is the language of truth, reciprocity, and trust. Luca Pacioli did not merely formulate debits and credits in 1494; he captured a fundamental law of human existence: you cannot receive value without creating equivalent value elsewhere.\n\nWhen a student learns that every entry requires equilibrium, they are internalizing life's most essential discipline. In personal finances, in public governance, and in individual ethics—unbalanced promises always result in a deficit. Master your books, and you have taken the first step toward mastering yourself.",
+      "contentBn": "চট্টগ্রামের শ্রেণীকক্ষে দীর্ঘ তিন দশক ধরে যখনই শিক্ষার্থীদের সামনে দাঁড়িয়েছি, একটি সাধারণ মানসিক দ্বিধা লক্ষ্য করেছি—হিসাববিজ্ঞানের ছক, খতিয়ান বা কার্যপত্রকে তারা অনেক সময় ভীতিকর বা যান্ত্রিক মনে করে।\n\nকিন্তু হিসাববিজ্ঞান কেবল শুষ্ক হিসাবের যোগ-বিয়োগ নয়; এটি সত্যবাদিতা, পারস্পরিক দায়িত্ব ও সামাজিক আস্থার ভাষা। ১৪৯৪ সালে লুকা প্যাসিওলি যখন দু'তরফা দাখিলা পদ্ধতির মূল রূপরেখা দিয়েছিলেন, তিনি মূলত মানবজীবনের এক চিরন্তন সত্য তুলে ধরেছিলেন: এক হাতে কিছু অর্জন করতে হলে অন্য হাতে তার সমমূল্যের মূল্য প্রদান করতে হয়।\n\nএকটি ডেবিটের বিপরীতে যেমন সমপরিমাণ ক্রেডিট নিশ্চিত করতে হয়, তেমনি জীবনের প্রতিটি অধিকার ও সুবিধার সাথে একটি সমান নৈতিক দায়িত্ব জড়িয়ে থাকে। যে শিক্ষার্থী হিসাবের এই ভারসাম্যের দর্শনটি উপলব্ধি করে, সে কেবল পরীক্ষায় ভালো নম্বর পায় না, সে সততা ও শৃঙ্খলার শক্তিতে নিজের চরিত্রও গড়ে তোলে।"
     },
     {
       "id": "art-2",
-      "slug": "placeholder-digital-classroom-mission",
-      "isPlaceholder": true,
-      "titleEn": "[Placeholder Article 2] Beyond Four Walls: Reaching Every Student Through Online Lectures",
-      "titleBn": "[নমুনা প্রবন্ধ ২] চার দেয়ালের ক্লাসরুম পেরিয়ে: প্রত্যন্ত অঞ্চলের শিক্ষার্থীদের পাশে",
-      "date": "2026-11-10",
-      "excerptEn": "[Placeholder Preview] Reflections on recording digital video classes and helping students across Bangladesh prepare for board examinations.",
-      "excerptBn": "[নমুনা বিবরণ] করোনাকালে ক্লাসরুমের বাইরে এসে অনলাইনে ভিডিও ক্লাস শুরু করা এবং সারা দেশের শিক্ষার্থীদের বিনামূল্যে শিক্ষা পৌঁছে দেওয়া নিয়ে স্মৃতিচারণ।",
-      "contentEn": "[Placeholder Text Content]\n\nEducation must not be restricted to those who can sit inside city colleges. Through recorded classes, students in distant upazilas and villages can learn foundational accounting principles free of cost.\n\n(This placeholder article can be customized or replaced anytime in the Admin Portal.)",
-      "contentBn": "[নমুনা মূল প্রবন্ধ]\n\nশিক্ষা কেবল বড় শহরের নামী শিক্ষাপ্রতিষ্ঠানের গণ্ডির মধ্যে সীমাবদ্ধ থাকা উচিত নয়। প্রযুক্তির সহায়তায় দেশের প্রত্যন্ত অঞ্চলের একজন শিক্ষার্থীও যেন ঘরে বসে সহজে বোর্ড পরীক্ষার প্রস্তুতি নিতে পারে—সেটিই আমাদের মূল লক্ষ্য।\n\n(এই লেখাটি নমুনা হিসেবে যুক্ত রয়েছে। স্যারের আসল বক্তব্য বা কোনো নতুন লেখা এখানে অ্যাডমিন থেকে যুক্ত করা যাবে।)"
+      "slug": "demystifying-the-fear-of-worksheet",
+      "isPlaceholder": false,
+      "titleEn": "Demystifying the Fear of Worksheets and Adjusting Entries",
+      "titleBn": "কার্যপত্র ও সমন্বয় জাবেদার ভীতি দূর করার সহজ কৌশল",
+      "date": "2026-11-12",
+      "excerptEn": "Practical classroom pedagogical insights into breaking down ten-column worksheets and accrued vs deferred expenses into logical visual patterns.",
+      "excerptBn": "দশ-ঘরা কার্যপত্র, সমন্বয় জাবেদা এবং বকেয়া ও অগ্রিম খরচের সঠিক হিসাব সহজে মনে রাখার বিশেষ শ্রেণীকক্ষ কৌশল।",
+      "contentEn": "Every year before board exams, hundreds of students visit my department room asking for shortcuts to master adjusting entries. The honest truth is: memorizing rules creates confusion, but understanding the timeline of transactions eliminates errors forever.\n\nWhen handling an accrued salary or unearned revenue, do not treat the problem as an isolated formula. Ask two basic questions:\n1. Has the work or service already been rendered in this period?\n2. Has the financial cash transaction crossed the ledger yet?\n\nOnce students visualize the transaction on a timeline, adjusting entries cease to be an intellectual puzzle and become second nature.",
+      "contentBn": "প্রতি বছর বোর্ড পরীক্ষার আগে শিক্ষার্থীরা যখন ক্লাসরুম শেষে আমার কাছে আসে, তাদের প্রধান উৎকণ্ঠা থাকে সমন্বয় জাবেদা ও কার্যপত্র নিয়ে। মুখস্থ করে হিসাববিজ্ঞান শেখার চেষ্টা করলে পরীক্ষার হলে বিভ্রান্তি তৈরি হতে বাধ্য।\n\nবকেয়া বেতন বা অগ্রিম আয়ের মতো জটিল সমন্বয়গুলো সমাধানের সময় দুটি সহজ প্রশ্ন মাথায় রাখতে হয়:\n১. এই হিসাবকালে সেবা বা সুবিধাটি কি ইতোমধ্যে গ্রহণ কিংবা প্রদান করা হয়েছে?\n২. নগদ অর্থ কি ইতোমধ্যে লেনদেন হয়েছে, নাকি ভবিষ্যতে হবে?\n\nলেনদেনকে একটি সময়ের সরলরেখায় চিত্রায়িত করতে পারলে কার্যপত্র কোনো জটিল গোলকধাঁধা থাকে না; বরং এটি অত্যন্ত তৃপ্তিদায়ক ও নিখুঁত এক গাণিতিক খেলায় পরিণত হয়।"
+    },
+    {
+      "id": "art-3",
+      "slug": "digital-lecture-mission",
+      "isPlaceholder": false,
+      "titleEn": "Beyond College Walls: Why Open Digital Lectures Matter for Bangladesh",
+      "titleBn": "চার দেয়ালের ক্লাসরুম পেরিয়ে: সারা দেশের শিক্ষার্থীদের জন্য ডিজিটাল শিক্ষা",
+      "date": "2026-10-28",
+      "excerptEn": "How turning to video lectures transformed educational equity, enabling rural students in remote upazilas to access premium HSC accounting lectures for free.",
+      "excerptBn": "প্রযুক্তির সহায়তায় দেশের প্রত্যন্ত অঞ্চল ও মফস্বলের অসচ্ছল শিক্ষার্থীরা কীভাবে কোনো আর্থিক খরচ ছাড়াই মানসম্মত শিক্ষকতার সুফল পাচ্ছে।",
+      "contentEn": "During the pandemic closures, classrooms stood silent. Yet, young minds could not afford a halt in their academic journey. That is when we set up our simple camera, microphone, and whiteboard to begin recording lectures for YouTube (@baharzubair).\n\nWhat began as emergency continuity evolved into a sacred mission. Today, when a student from a remote upazila in Sylhet, Dinajpur, or Cox's Bazar comments: 'Sir, I could not afford private coaching, but your video helped me earn an A+ in Accounting', no institutional award in the world can match that fulfillment.\n\nDemocratizing knowledge is the ultimate civic duty of senior academicians in Bangladesh.",
+      "contentBn": "করোনাকালে যখন শিক্ষাপ্রতিষ্ঠানের দরজা বন্ধ হয়ে গেল, তখন শ্রেণীকক্ষ নীরব থাকলেও শিক্ষার্থীদের সময় তো থেমে থাকেনি। সেই সময় সাধারণ ক্যামেরা ও সাদা বোর্ড নিয়ে আমরা ইউটিউবে (@baharzubair) পাঠদান রেকর্ড করতে শুরু করি।\n\nশুরুটা ছিল আপৎকালীন সমাধান হিসেবে, কিন্তু আজ তা এক আজীবন শিক্ষাব্রতে পরিণত হয়েছে। যখন কোনো প্রত্যন্ত চরাঞ্চল বা দূরবর্তী গ্রামের শিক্ষার্থী মেসেজ লিখে জানায়: 'স্যার, প্রাইভেট পড়ার আর্থিক সামর্থ্য আমার ছিল না, কিন্তু আপনার ভিডিও ক্লাস দেখে আমি এইচএসসিতে জিপিএ-৫ পেয়েছি'—তখন যে পরম আনন্দ অনুভূত হয়, তার সাথে কোনো জাগতিক পুরস্কারের তুলনা চলে না।\n\nশিক্ষা সবার অধিকার, এবং ডিজিটাল প্রযুক্তি সেই অধিকার নিশ্চিত করার এক অপূর্ব সেতু।"
+    },
+    {
+      "id": "art-4",
+      "slug": "civic-stewardship-in-chattogram",
+      "isPlaceholder": false,
+      "titleEn": "Civic Stewardship: Why Every Educator Must Give Back to Society",
+      "titleBn": "নাগরিক অঙ্গীকার: শিক্ষাবিদদের সমাজসেবামূলক দায়িত্বের গুরুত্ব",
+      "date": "2026-09-15",
+      "excerptEn": "The philosophy behind REMA Trust and educational governance: why teaching integrity in class requires serving the community outside it.",
+      "excerptBn": "রেমা ট্রাস্টের জনকল্যাণমূলক কর্মকাণ্ড এবং শিক্ষাপ্রতিষ্ঠান পরিচালনার দর্শন: ক্লাসরুমে সততার পাঠ দিলে সমাজের ময়দানেও তার প্রমাণ দিতে হয়।",
+      "contentEn": "Teaching ethics from a textbook is easy; embodying it through community service requires relentless dedication. Through REMA Trust, our focus has always been targeted and transparent: medical subsidies for destitute families, direct educational scholarships for meritorious college students, and emergency humanitarian relief.\n\nSimilarly, serving on the governing bodies of schools like Chattogram Laboratory School & College is about upholding educational standards for the next generation. If experienced teachers do not step forward into civic governance, who will protect the integrity of our institutions?",
+      "contentBn": "বই দেখে নীতিবাক্য শোনানো সহজ, কিন্তু সমাজের বাস্তব ময়দানে সেটির প্রতিফলন ঘটাতে প্রয়োজন নিরবচ্ছিন্ন নিষ্ঠা। রেমা (REMA) ট্রাস্টের মাধ্যমে আমাদের মূল লক্ষ্য অত্যন্ত স্পষ্ট ও স্বচ্ছ: অসচ্ছল পরিবারের জন্য চিকিৎসা সহায়তা প্রদান, মেধাবী শিক্ষার্থীদের শিক্ষাবৃত্তি এবং দুর্যোগকালে জরুরি মানবিক সেবা পৌঁছে দেওয়া।\n\nএকইভাবে চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজের মতো ঐতিহ্যবাহী প্রতিষ্ঠানের পরিচালনায় যুক্ত থাকা মানে আগামী প্রজন্মের জন্য শিক্ষার সুস্থ পরিবেশ ও শৃঙ্খলা রক্ষা করা। অভিজ্ঞ শিক্ষকেরা যদি সমাজের নেতৃত্বে এগিয়ে না আসেন, তবে প্রাতিষ্ঠানিক সততা রক্ষা করবে কে?"
     }
   ],
   "gallery": [
     {
       "id": "img-1",
       "url": "/uploads/bahar_zubair_portrait.jpg",
-      "captionEn": "[Portrait Placeholder] Professor Bahar Uddin Md. Zubair",
-      "captionBn": "[প্রতিকৃতি নমুনা] প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের"
+      "captionEn": "Professor Bahar Uddin Md. Zubair — Assistant Professor & Head of Accounting",
+      "captionBn": "প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের — সহকারী অধ্যাপক ও বিভাগীয় প্রধান (হিসাববিজ্ঞান)"
     },
     {
       "id": "img-2",
-      "url": "https://placehold.co/600x400/FAF9F5/7F5539?text=Classroom+Lecture+Photo+(Placeholder)",
-      "captionEn": "[Placeholder Image 1] Classroom Lecture Session with Students",
-      "captionBn": "[নমুনা ছবি ১] শিক্ষার্থীদের সাথে শ্রেণীকক্ষে পাঠদানের মুহূর্ত"
+      "url": "/uploads/archive_lecture.svg",
+      "captionEn": "Classroom Lecture Session — Interactive ledger instruction at Omargani M.E.S. College",
+      "captionBn": "শ্রেণীকক্ষে পাঠদান — ওমরগনি এম.ই.এস. কলেজের লেকচার হলে সরাসরি হিসাববিজ্ঞান ক্লাস"
     },
     {
       "id": "img-3",
-      "url": "https://placehold.co/600x400/FAF9F5/2D5A43?text=REMA+Trust+Meeting+(Placeholder)",
-      "captionEn": "[Placeholder Image 2] REMA Trust Executive Council & Scholarship Award",
-      "captionBn": "[নমুনা ছবি ২] রেমা ট্রাস্টের সভা ও শিক্ষাবৃত্তি প্রদান"
+      "url": "/uploads/archive_rema.svg",
+      "captionEn": "REMA Trust Executive Session — Meritorious scholarship & community aid disbursement",
+      "captionBn": "রেমা ট্রাস্ট কার্যনির্বাহী সভা — মেধাবী শিক্ষার্থীদের শিক্ষাবৃত্তি ও সমাজকল্যাণ কর্মসূচি"
     },
     {
       "id": "img-4",
-      "url": "https://placehold.co/600x400/FAF9F5/1A1917?text=Ctg+Laboratory+School+(Placeholder)",
-      "captionEn": "[Placeholder Image 3] Chattogram Laboratory School & College Governance Meeting",
-      "captionBn": "[নমুনা ছবি ৩] চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজের পরিচালনা পর্ষদ"
+      "url": "/uploads/archive_lab_school.svg",
+      "captionEn": "Chattogram Laboratory School & College — Governing council academic review session",
+      "captionBn": "চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজ — পরিচালনা পর্ষদের গুণগত মানোন্নয়ন সভা"
     },
     {
       "id": "img-5",
-      "url": "https://placehold.co/600x400/FAF9F5/7F5539?text=Departmental+Seminar+(Placeholder)",
-      "captionEn": "[Placeholder Image 4] Department of Accounting Faculty Seminar",
-      "captionBn": "[নমুনা ছবি ৪] হিসাববিজ্ঞান বিভাগের শিক্ষক ও সেমিনার"
+      "url": "/uploads/archive_seminar.svg",
+      "captionEn": "Departmental Seminar — Ethical principles and modern accounting frameworks",
+      "captionBn": "বিভাগীয় সেমিনার — হিসাববিজ্ঞানের আধুনিক প্রয়োগ ও নৈতিক মূল্যবোধ বিষয়ক আলোচনা"
     },
     {
       "id": "img-6",
-      "url": "https://placehold.co/600x400/FAF9F5/2D5A43?text=Convocation+Alumni+Moment+(Placeholder)",
-      "captionEn": "[Placeholder Image 5] Student Graduation & Mentorship Memory",
-      "captionBn": "[নমুনা ছবি ৫] প্রাক্তন শিক্ষার্থীদের সাথে স্মৃতিচারণ মুহূর্ত"
+      "url": "/uploads/archive_alumni.svg",
+      "captionEn": "Alumni Mentorship Fellowship — Celebrating 30+ years of guided student leaders",
+      "captionBn": "প্রাক্তন শিক্ষার্থী ও শিক্ষক পুনর্মিলন — তিন দশকের ছাত্র-শিক্ষক বন্ধন ও স্মৃতিচারণ"
+    },
+    {
+      "id": "img-7",
+      "url": "/uploads/archive_board.svg",
+      "captionEn": "HSC Examination Evaluation & Curriculum Council — Educational development forum",
+      "captionBn": "উচ্চমাধ্যমিক পরীক্ষা মূল্যায়ন ও পাঠ্যক্রম পরামর্শক ফোরাম"
     }
   ],
   "contact": {
