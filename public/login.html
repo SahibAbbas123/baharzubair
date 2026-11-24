@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal Security — Professor Bahar Zubair</title>
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      background-color: #FAF9F5;
+      color: #1A1917;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md bg-white rounded-2xl border border-black/[0.08] p-8 shadow-sm space-y-6">
+    <div class="text-center space-y-2">
+      <div class="w-16 h-16 rounded-full overflow-hidden mx-auto border border-black/[0.08]">
+        <img src="/uploads/bahar_zubair_portrait.jpg" alt="Professor Bahar Zubair" class="w-full h-full object-cover">
+      </div>
+      <h1 id="portalHeading" class="text-xl font-bold text-slate-900">Admin Portal Sign In</h1>
+      <p id="portalSub" class="text-xs text-slate-500">Secure content management for Professor Bahar Zubair website</p>
+    </div>
+
+    <!-- Error/Notice Alert -->
+    <div id="authAlert" class="hidden p-3 rounded-lg text-xs font-medium"></div>
+
+    <!-- Toggle Buttons: Login vs Sign Up -->
+    <div id="tabToggleCont" class="flex p-1 bg-slate-100 rounded-lg text-xs font-semibold">
+      <button id="toggleLoginBtn" onclick="setMode('login')" class="flex-1 py-1.5 rounded-md bg-white text-slate-900 shadow-xs">
+        Log In
+      </button>
+      <button id="toggleRegisterBtn" onclick="setMode('register')" class="flex-1 py-1.5 rounded-md text-slate-500 hover:text-slate-900">
+        Create Admin Account
+      </button>
+    </div>
+
+    <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-700 mb-1">Username / ইমেইল বা নাম</label>
+        <input type="text" id="username" required autocomplete="username" placeholder="e.g. admin or baharzubair" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-slate-900 text-xs">
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-700 mb-1">Password / পাসওয়ার্ড</label>
+        <input type="password" id="password" required autocomplete="current-password" placeholder="••••••••••••" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-slate-900 text-xs">
+      </div>
+
+      <div id="setupKeyField" class="hidden">
+        <label class="block text-xs font-bold text-slate-700 mb-1">Admin Invite Key (if existing admin)</label>
+        <input type="password" id="setupKey" placeholder="admin-invite-bahar" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-xs">
+      </div>
+
+      <button type="submit" id="submitBtn" class="w-full py-2.5 bg-slate-900 hover:bg-black text-white font-bold rounded-lg text-xs transition">
+        Sign In to Admin
+      </button>
+    </form>
+
+    <div class="text-center pt-2 border-t border-slate-100">
+      <a href="/" class="text-xs text-slate-500 hover:text-slate-800 transition">
+        &larr; Return to Public Website
+      </a>
+    </div>
+  </div>
+
+  <script>
+    let mode = 'login';
+
+    function setMode(newMode) {
+      mode = newMode;
+      const loginBtn = document.getElementById('toggleLoginBtn');
+      const regBtn = document.getElementById('toggleRegisterBtn');
+      const submitBtn = document.getElementById('submitBtn');
+      const setupKeyField = document.getElementById('setupKeyField');
+      const alertBox = document.getElementById('authAlert');
+      alertBox.classList.add('hidden');
+
+      if (mode === 'login') {
+        loginBtn.className = "flex-1 py-1.5 rounded-md bg-white text-slate-900 shadow-xs";
+        regBtn.className = "flex-1 py-1.5 rounded-md text-slate-500 hover:text-slate-900";
+        submitBtn.textContent = "Sign In to Admin";
+        setupKeyField.classList.add('hidden');
+      } else {
+        regBtn.className = "flex-1 py-1.5 rounded-md bg-white text-slate-900 shadow-xs";
+        loginBtn.className = "flex-1 py-1.5 rounded-md text-slate-500 hover:text-slate-900";
+        submitBtn.textContent = "Create Account & Sign In";
+      }
+    }
+
+    async function checkStatus() {
+      try {
+        const res = await fetch('/api/auth/status');
+        const data = await res.json();
+        if (data.loggedIn) {
+          window.location.href = '/admin';
+          return;
+        }
+        if (!data.hasAdmin) {
+          // No admin created yet: default to Sign Up
+          setMode('register');
+          showAlert('First time setup: Please create your master admin account.', 'info');
+        } else {
+          setMode('login');
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function showAlert(msg, type = 'error') {
+      const box = document.getElementById('authAlert');
+      box.textContent = msg;
+      box.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-blue-50', 'text-blue-700');
+      if (type === 'error') {
+        box.classList.add('bg-red-50', 'text-red-700');
+      } else {
+        box.classList.add('bg-blue-50', 'text-blue-700');
+      }
+    }
+
+    async function handleAuthSubmit(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const setupKey = document.getElementById('setupKey').value;
+      const url = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password, setupKey })
+        });
+        const result = await res.json();
+        if (result.success) {
+          window.location.href = '/admin';
+        } else {
+          showAlert(result.error || 'Authentication failed');
+          if (result.error && result.error.includes('already exists')) {
+            setMode('login');
+          }
+        }
+      } catch (err) {
+        showAlert('Network error. Please try again.');
+      }
+    }
+
+    checkStatus();
+  </script>
+</body>
+</html>

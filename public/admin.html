@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সহজ ড্যাশবোর্ড | প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের</title>
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clay: '#7F5539',
+            cardborder: 'rgba(0,0,0,0.08)'
+          },
+          fontFamily: {
+            bn: ['"Hind Siliguri"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8F9FA;
+    }
+    .active-tab {
+      background-color: #1A1917;
+      color: #FFFFFF;
+    }
+    .inactive-tab {
+      background-color: #FFFFFF;
+      color: #4B5563;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .active-tab:hover {
+      background-color: #000000;
+    }
+  </style>
+</head>
+<body class="text-slate-900 pb-20">
+
+  <!-- Senior-friendly Clean Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+    <div class="max-w-4xl mx-auto px-4 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full overflow-hidden border border-slate-300">
+          <img id="headerAvatar" src="/uploads/bahar_zubair_portrait.jpg" alt="Bahar Zubair" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <h1 class="text-base font-bold text-slate-900">ওয়েবসাইট নিয়ন্ত্রণ কেন্দ্র (Admin)</h1>
+          <p class="text-xs text-slate-500">প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের — পোর্টফোলিও কন্ট্রোল</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="handleLogout()" class="px-3 py-1.5 border border-slate-300 hover:bg-slate-100 text-slate-700 rounded-md text-xs font-semibold transition">
+          লগআউট (Log Out)
+        </button>
+        <a href="/" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-slate-900 hover:bg-black text-white rounded-md text-xs font-semibold transition">
+          <span>মূল ওয়েবসাইট দেখুন</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-lg shadow-xl flex items-center gap-2.5 text-xs">
+    <span id="toastIcon">✅</span>
+    <span id="toastMsg">সফলভাবে সংরক্ষিত হয়েছে!</span>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 pt-6 space-y-6">
+
+    <!-- Big Senior Friendly Navigation Tabs -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <button onclick="switchTab('articles')" id="tabBtn-articles" class="py-2.5 px-3 rounded-lg font-bold text-xs sm:text-sm transition active-tab">
+        📝 আর্টিকেল ও প্রবন্ধ
+      </button>
+      <button onclick="switchTab('gallery')" id="tabBtn-gallery" class="py-2.5 px-3 rounded-lg font-bold text-xs sm:text-sm transition inactive-tab">
+        🖼️ ছবি আপলোড ও গ্যালারি
+      </button>
+      <button onclick="switchTab('videos')" id="tabBtn-videos" class="py-2.5 px-3 rounded-lg font-bold text-xs sm:text-sm transition inactive-tab">
+        🎥 ইউটিউব ভিডিও
+      </button>
+      <button onclick="switchTab('profile')" id="tabBtn-profile" class="py-2.5 px-3 rounded-lg font-bold text-xs sm:text-sm transition inactive-tab">
+        👤 আত্মপরিচয় ও উক্তি
+      </button>
+    </div>
+
+    <!-- TAB 1: ARTICLES -->
+    <section id="tab-articles" class="space-y-6">
+      
+      <!-- New / Edit Article Card -->
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h2 id="articleFormTitle" class="text-base font-bold text-slate-800">নতুন প্রবন্ধ বা উপদেশ লিখুন</h2>
+          <button id="cancelArticleEditBtn" onclick="resetArticleForm()" class="hidden text-xs text-rose-600 hover:underline">
+            ✕ এডিট বাতিল করুন
+          </button>
+        </div>
+
+        <form id="articleForm" onsubmit="handleSaveArticle(event)" class="space-y-4">
+          <input type="hidden" id="articleId" value="">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">প্রবন্ধের শিরোনাম (বাংলায়) *</label>
+              <input type="text" id="artTitleBn" required placeholder="উদা: হিসাববিজ্ঞানের ভয় দূর করার সহজ উপায়" class="w-full px-3 py-2 rounded-md border border-slate-300 focus:ring-1 focus:ring-slate-800 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Title (ইংরেজিতে - ঐচ্ছিক)</label>
+              <input type="text" id="artTitleEn" placeholder="e.g. Overcoming the Fear of Accounting" class="w-full px-3 py-2 rounded-md border border-slate-300 focus:ring-1 focus:ring-slate-800 text-xs">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">সংক্ষিপ্ত সারসংক্ষেপ (১-২ বাক্য)</label>
+            <textarea id="artExcerptBn" rows="2" placeholder="প্রবন্ধের মূল ভাব বা ছোট সারসংক্ষেপ..." class="w-full px-3 py-2 rounded-md border border-slate-300 focus:ring-1 focus:ring-slate-800 text-xs"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">মূল বক্তব্য বা প্রবন্ধের বিবরণ *</label>
+            <textarea id="artContentBn" rows="6" required placeholder="এখানে আপনার পূর্ণাঙ্গ উপদেশ, স্মৃতিচারণ বা আলোচনা লিখুন..." class="w-full px-3 py-2 rounded-md border border-slate-300 focus:ring-1 focus:ring-slate-800 text-xs leading-relaxed"></textarea>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="submit" class="px-5 py-2 bg-slate-900 hover:bg-black text-white rounded-md font-bold text-xs transition">
+              সংরক্ষণ করুন (Save Article)
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Existing Articles List -->
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-4">
+        <h3 class="text-sm font-bold text-slate-800 border-b border-slate-100 pb-2">বর্তমান প্রকাশিত প্রবন্ধসমূহ</h3>
+        <div id="articlesList" class="space-y-3">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: GALLERY -->
+    <section id="tab-gallery" class="hidden space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-4">
+        <h2 class="text-base font-bold text-slate-800 border-b border-slate-100 pb-2">নতুন ছবি আপলোড করুন</h2>
+        <form id="uploadForm" onsubmit="handleUploadImage(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">ডিভাইস থেকে ছবি নির্বাচন করুন *</label>
+            <input type="file" id="imageFileInput" accept="image/*" required class="block w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 cursor-pointer">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">ছবির পরিচিতি বা ক্যাপশন (বাংলায়)</label>
+              <input type="text" id="imgCaptionBn" placeholder="উদা: ওমরগনি এমইএস কলেজের সেমিনারে" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Caption (ইংরেজিতে)</label>
+              <input type="text" id="imgCaptionEn" placeholder="e.g. Accounting Seminar with Faculty" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <input type="checkbox" id="setAsAvatarCheck" class="w-4 h-4 rounded text-slate-800">
+            <label for="setAsAvatarCheck" class="text-xs font-medium text-slate-700">এই ছবিটিকে মূল পোর্টফোলিও ছবি হিসেবে সেট করুন</label>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="submit" id="uploadBtn" class="px-5 py-2 bg-slate-900 hover:bg-black text-white rounded-md font-bold text-xs transition">
+              ছবি আপলোড করুন (Upload Image)
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-4">
+        <h3 class="text-sm font-bold text-slate-800 border-b border-slate-100 pb-2">বর্তমান ছবিসমূহ</h3>
+        <div id="galleryList" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: VIDEOS -->
+    <section id="tab-videos" class="hidden space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-4">
+        <h2 class="text-base font-bold text-slate-800 border-b border-slate-100 pb-2">নতুন ইউটিউব ভিডিও যোগ করুন</h2>
+        <form id="videoForm" onsubmit="handleSaveVideo(event)" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">ইউটিউব ভিডিও লিংক বা আইডি *</label>
+              <input type="text" id="vidYoutubeId" required placeholder="উদা: VWwI4KN2N7M অথবা সম্পূর্ণ লিংক" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">ক্যাটেগরি</label>
+              <input type="text" id="vidCategory" placeholder="উদা: HSC Accounting / Board Solution" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">ভিডিওর শিরোনাম (বাংলায়) *</label>
+              <input type="text" id="vidTitleBn" required placeholder="উদা: কার্যপত্র ও আর্থিক বিবরণীর সহজ সমাধান" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Title (ইংরেজিতে)</label>
+              <input type="text" id="vidTitleEn" placeholder="e.g. Mastering Worksheets" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="submit" class="px-5 py-2 bg-slate-900 hover:bg-black text-white rounded-md font-bold text-xs transition">
+              ভিডিও যোগ করুন (Add Video)
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-4">
+        <h3 class="text-sm font-bold text-slate-800 border-b border-slate-100 pb-2">বর্তমান প্রদর্শিত ভিডিওসমূহ</h3>
+        <div id="videosList" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: PROFILE & BIO -->
+    <section id="tab-profile" class="hidden space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-cardborder shadow-xs space-y-5">
+        <h2 class="text-base font-bold text-slate-800 border-b border-slate-100 pb-2">স্যারের আত্মকথা ও ৩টি মূল উক্তি সম্পাদন</h2>
+        
+        <form id="profileForm" onsubmit="handleSaveProfile(event)" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">পদবি ও প্রতিষ্ঠান (বাংলায়)</label>
+              <input type="text" id="profHeadlineBn" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">শিক্ষকতার সময় ও ছাত্র সংখ্যা</label>
+              <div class="grid grid-cols-2 gap-2">
+                <input type="text" id="profYears" placeholder="30+ বছর" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+                <input type="text" id="profStudents" placeholder="50,000+ ছাত্র" class="w-full px-3 py-2 rounded-md border border-slate-300 text-xs">
+              </div>
+            </div>
+          </div>
+
+          <!-- Paragraph 1 -->
+          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-1">
+            <h4 class="font-bold text-xs text-slate-800">১. ক্লাসরুমের আহ্বান ও শিক্ষকতার ব্রত (The Calling)</h4>
+            <textarea id="profCallingBn" rows="3" class="w-full p-2.5 rounded border border-slate-300 text-xs leading-relaxed"></textarea>
+          </div>
+
+          <!-- Paragraph 2 -->
+          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-1">
+            <h4 class="font-bold text-xs text-slate-800">২. প্রত্যন্ত অঞ্চলে অনলাইন শিক্ষা বিস্তার (Digital Reach)</h4>
+            <textarea id="profDigitalBn" rows="3" class="w-full p-2.5 rounded border border-slate-300 text-xs leading-relaxed"></textarea>
+          </div>
+
+          <!-- Paragraph 3 -->
+          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-1">
+            <h4 class="font-bold text-xs text-slate-800">৩. সমাজসেবা ও রেমা ট্রাস্ট (Civic Responsibility)</h4>
+            <textarea id="profCivicBn" rows="3" class="w-full p-2.5 rounded border border-slate-300 text-xs leading-relaxed"></textarea>
+          </div>
+
+          <div class="flex justify-end">
+            <button type="submit" class="px-5 py-2 bg-slate-900 hover:bg-black text-white rounded-md font-bold text-xs transition">
+              প্রোফাইল আপডেট করুন (Save Changes)
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let siteData = null;
+
+    function showToast(msg, icon = '✅') {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      document.getElementById('toastIcon').textContent = icon;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3500);
+    }
+
+    function switchTab(tabId) {
+      ['articles', 'gallery', 'videos', 'profile'].forEach(id => {
+        const sec = document.getElementById('tab-' + id);
+        const btn = document.getElementById('tabBtn-' + id);
+        if (id === tabId) {
+          sec.classList.remove('hidden');
+          btn.className = "py-2.5 px-3 rounded-lg font-bold text-xs sm:text-sm transition active-tab";
+        } else {
+          sec.classList.add('hidden');
+          btn.className = "py-2.5 px-3 rounded-lg font-bold text-xs sm:text-sm transition inactive-tab";
+        }
+      });
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch('/api/data');
+        siteData = await res.json();
+        renderDashboard();
+      } catch (e) {
+        showToast('ডাটা লোড হতে সমস্যা হয়েছে', '⚠️');
+      }
+    }
+
+    function renderDashboard() {
+      if (!siteData) return;
+      const p = siteData.profile;
+
+      document.getElementById('headerAvatar').src = p.avatarUrl;
+
+      // Articles
+      const artList = document.getElementById('articlesList');
+      artList.innerHTML = (siteData.articles || []).map(a => `
+        <div class="p-3.5 rounded-lg border border-slate-200 bg-slate-50 flex items-start justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded font-mono">${a.date}</span>
+              <h4 class="font-bold text-slate-900 text-xs">${a.titleBn || a.titleEn}</h4>
+            </div>
+            <p class="text-[11px] text-slate-600 line-clamp-2">${a.excerptBn || a.contentBn || a.excerptEn}</p>
+          </div>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button onclick="editArticle('${a.id}')" class="px-2.5 py-1 bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 rounded text-xs font-semibold">
+              এডিট
+            </button>
+            <button onclick="deleteArticle('${a.id}')" class="px-2.5 py-1 bg-rose-50 border border-rose-200 text-rose-600 hover:bg-rose-100 rounded text-xs font-semibold">
+              মুছুন
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      // Gallery
+      const galList = document.getElementById('galleryList');
+      galList.innerHTML = (siteData.gallery || []).map(g => `
+        <div class="relative group rounded-lg overflow-hidden border border-slate-200 bg-slate-100 aspect-square">
+          <img src="${g.url}" alt="${g.captionBn}" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity p-2 flex flex-col justify-between text-white text-[11px]">
+            <p class="line-clamp-2">${g.captionBn || g.captionEn}</p>
+            <button onclick="deleteGalleryPhoto('${g.id}')" class="w-full py-1 bg-rose-600 hover:bg-rose-700 text-white rounded font-bold text-[10px]">
+              মুছে ফেলুন
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      // Videos
+      const vidList = document.getElementById('videosList');
+      vidList.innerHTML = (siteData.featuredVideos || []).map(v => `
+        <div class="p-3 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
+          <div class="space-y-0.5">
+            <span class="text-[10px] uppercase font-bold text-clay">${v.category || "Lecture"}</span>
+            <h4 class="font-bold text-slate-900 text-xs">${v.titleBn || v.titleEn}</h4>
+            <span class="text-[10px] text-slate-400 font-mono">ID: ${v.youtubeId}</span>
+          </div>
+          <button onclick="deleteVideo('${v.id}')" class="px-2 py-1 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded text-xs font-semibold shrink-0">
+            মুছুন
+          </button>
+        </div>
+      `).join('');
+
+      // Profile
+      document.getElementById('profHeadlineBn').value = p.headlineBn || "";
+      document.getElementById('profYears').value = p.yearsOfExperience || "";
+      document.getElementById('profStudents').value = p.studentsImpacted || "";
+      document.getElementById('profCallingBn').value = p.bioCalling?.bn || "";
+      document.getElementById('profDigitalBn').value = p.bioDigital?.bn || "";
+      document.getElementById('profCivicBn').value = p.bioCivic?.bn || "";
+    }
+
+    function editArticle(id) {
+      const art = (siteData.articles || []).find(a => a.id === id);
+      if (!art) return;
+      document.getElementById('articleId').value = art.id;
+      document.getElementById('artTitleBn').value = art.titleBn || "";
+      document.getElementById('artTitleEn').value = art.titleEn || "";
+      document.getElementById('artExcerptBn').value = art.excerptBn || "";
+      document.getElementById('artContentBn').value = art.contentBn || "";
+      document.getElementById('articleFormTitle').textContent = "প্রবন্ধ সম্পাদন করুন";
+      document.getElementById('cancelArticleEditBtn').classList.remove('hidden');
+      window.scrollTo({ top: 80, behavior: 'smooth' });
+    }
+
+    function resetArticleForm() {
+      document.getElementById('articleForm').reset();
+      document.getElementById('articleId').value = "";
+      document.getElementById('articleFormTitle').textContent = "নতুন প্রবন্ধ বা উপদেশ লিখুন";
+      document.getElementById('cancelArticleEditBtn').classList.add('hidden');
+    }
+
+    async function handleSaveArticle(e) {
+      e.preventDefault();
+      const id = document.getElementById('articleId').value;
+      const titleBn = document.getElementById('artTitleBn').value;
+      const titleEn = document.getElementById('artTitleEn').value || titleBn;
+      const excerptBn = document.getElementById('artExcerptBn').value;
+      const contentBn = document.getElementById('artContentBn').value;
+
+      try {
+        const res = await fetch('/api/articles', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: id || undefined,
+            titleBn,
+            titleEn,
+            excerptBn,
+            excerptEn: excerptBn,
+            contentBn,
+            contentEn: contentBn
+          })
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast('প্রবন্ধটি সফলভাবে সংরক্ষিত হয়েছে!');
+          resetArticleForm();
+          await loadData();
+        }
+      } catch (err) {
+        showToast('সংরক্ষণ ব্যর্থ হয়েছে', '❌');
+      }
+    }
+
+    async function deleteArticle(id) {
+      if (!confirm('আপনি কি নিশ্চিত এই প্রবন্ধটি মুছে ফেলতে চান?')) return;
+      try {
+        const res = await fetch('/api/articles/' + id, { method: 'DELETE' });
+        const result = await res.json();
+        if (result.success) {
+          showToast('প্রবন্ধটি মুছে ফেলা হয়েছে');
+          await loadData();
+        }
+      } catch (err) {
+        showToast('মুছতে সমস্যা হয়েছে', '❌');
+      }
+    }
+
+    async function handleUploadImage(e) {
+      e.preventDefault();
+      const fileInput = document.getElementById('imageFileInput');
+      if (!fileInput.files || fileInput.files.length === 0) return;
+
+      const formData = new FormData();
+      formData.append('image', fileInput.files[0]);
+      formData.append('captionBn', document.getElementById('imgCaptionBn').value);
+      formData.append('captionEn', document.getElementById('imgCaptionEn').value);
+      formData.append('setAsAvatar', document.getElementById('setAsAvatarCheck').checked);
+
+      document.getElementById('uploadBtn').textContent = "আপলোড হচ্ছে...";
+      document.getElementById('uploadBtn').disabled = true;
+
+      try {
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast('ছবি সফলভাবে আপলোড হয়েছে!');
+          document.getElementById('uploadForm').reset();
+          await loadData();
+        }
+      } catch (err) {
+        showToast('ছবি আপলোড ব্যর্থ হয়েছে', '❌');
+      } finally {
+        document.getElementById('uploadBtn').textContent = "ছবি আপলোড করুন (Upload Image)";
+        document.getElementById('uploadBtn').disabled = false;
+      }
+    }
+
+    async function deleteGalleryPhoto(id) {
+      if (!confirm('এই ছবিটি কি মুছে ফেলবেন?')) return;
+      try {
+        const res = await fetch('/api/gallery/' + id, { method: 'DELETE' });
+        const result = await res.json();
+        if (result.success) {
+          showToast('ছবিটি মুছে ফেলা হয়েছে');
+          await loadData();
+        }
+      } catch (e) {
+        showToast('ছবি মুছতে ব্যর্থ হয়েছে', '❌');
+      }
+    }
+
+    function extractYouTubeId(urlOrId) {
+      if (!urlOrId) return '';
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      const match = urlOrId.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : urlOrId.trim();
+    }
+
+    async function handleSaveVideo(e) {
+      e.preventDefault();
+      const rawInput = document.getElementById('vidYoutubeId').value;
+      const ytId = extractYouTubeId(rawInput);
+      const titleBn = document.getElementById('vidTitleBn').value;
+      const titleEn = document.getElementById('vidTitleEn').value || titleBn;
+      const category = document.getElementById('vidCategory').value || "Lecture";
+
+      try {
+        const res = await fetch('/api/videos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ youtubeId: ytId, titleBn, titleEn, category })
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast('ভিডিও যোগ করা হয়েছে!');
+          document.getElementById('videoForm').reset();
+          await loadData();
+        }
+      } catch (err) {
+        showToast('ভিডিও যোগ করতে সমস্যা হয়েছে', '❌');
+      }
+    }
+
+    async function deleteVideo(id) {
+      if (!confirm('ভিডিওটি তালিকা থেকে মুছবেন?')) return;
+      try {
+        const res = await fetch('/api/videos/' + id, { method: 'DELETE' });
+        const result = await res.json();
+        if (result.success) {
+          showToast('ভিডিওটি মুছে ফেলা হয়েছে');
+          await loadData();
+        }
+      } catch (e) {
+        showToast('মুছতে সমস্যা হয়েছে', '❌');
+      }
+    }
+
+    async function handleSaveProfile(e) {
+      e.preventDefault();
+      const data = {
+        headlineBn: document.getElementById('profHeadlineBn').value,
+        yearsOfExperience: document.getElementById('profYears').value,
+        studentsImpacted: document.getElementById('profStudents').value,
+        bioCalling: {
+          ...siteData.profile.bioCalling,
+          bn: document.getElementById('profCallingBn').value
+        },
+        bioDigital: {
+          ...siteData.profile.bioDigital,
+          bn: document.getElementById('profDigitalBn').value
+        },
+        bioCivic: {
+          ...siteData.profile.bioCivic,
+          bn: document.getElementById('profCivicBn').value
+        }
+      };
+
+      try {
+        const res = await fetch('/api/profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast('প্রোফাইলের তথ্য আপডেট করা হয়েছে!');
+          await loadData();
+        }
+      } catch (e) {
+        showToast('আপডেট ব্যর্থ হয়েছে', '❌');
+      }
+    }
+
+    async function handleLogout() {
+      await fetch('/api/auth/logout', { method: 'POST' });
+      window.location.href = '/login.html';
+    }
+
+    async function checkAuth() {
+      try {
+        const res = await fetch('/api/auth/status');
+        const data = await res.json();
+        if (!data.loggedIn) {
+          window.location.href = '/login.html';
+        }
+      } catch (e) {
+        window.location.href = '/login.html';
+      }
+    }
+
+    checkAuth();
+    loadData();
+  </script>
+</body>
+</html>

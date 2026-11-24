@@ -1,0 +1,178 @@
+{
+  "admins": [],
+  "profile": {
+    "fullName": "Bahar Uddin Md. Zubair",
+    "shortName": "Bahar Zubair",
+    "headlineEn": "Assistant Professor & Head, Department of Accounting, Omargani M.E.S. College",
+    "headlineBn": "সহকারী অধ্যাপক ও বিভাগীয় প্রধান, হিসাববিজ্ঞান বিভাগ, ওমরগনি এম.ই.এস. কলেজ, চট্টগ্রাম",
+    "avatarUrl": "/uploads/bahar_zubair_portrait.jpg",
+    "location": "Chattogram, Bangladesh",
+    "yearsOfExperience": "30+",
+    "studentsImpacted": "50,000+",
+    "youtubeSubscribers": "Growing Community",
+    "socialLinks": {
+      "youtube": "https://www.youtube.com/@baharzubair",
+      "facebook": "https://www.facebook.com/bahar.zubair",
+      "linkedin": "https://www.linkedin.com/in/bahar-zubair-4a2b241a7/"
+    },
+    "bioCalling": {
+      "en": "For over three decades in the lecture halls of Chattogram, I have dedicated myself to demystifying the world of accounting and business studies. Teaching to me is far greater than textbooks and financial statements; it is the privilege of nurturing moral clarity, discipline, and practical wisdom in young minds who will build tomorrow's economy.",
+      "bn": "চট্টগ্রামের শ্রেণীকক্ষে তিন দশকেরও বেশি সময় ধরে আমি হিসাববিজ্ঞানের মতো প্রায়োগিক এবং জটিল বিষয়কে শিক্ষার্থীদের কাছে সহজ ও আনন্দময় করার নিরন্তর চেষ্টা করে আসছি। শিক্ষকতা কেবল একটি পেশা নয়, বরং তরুণ প্রজন্মের হৃদয়ে সততা, আর্থিক শৃঙ্খলা ও আত্মবিশ্বাস তৈরি করার এক আজীবন অঙ্গীকার।"
+    },
+    "bioDigital": {
+      "en": "Education must never be constrained by physical walls. Through YouTube and digital lectures, I bring high-yield accounting principles, HSC board solutions, and conceptual clarity directly to learners across every district of Bangladesh—free and accessible to any student with curiosity and grit.",
+      "bn": "প্রযুক্তির যুগে শিক্ষাকে শুধু চার দেয়ালের ক্লাসরুমে সীমাবদ্ধ না রেখে, আমি ইউটিউবের মাধ্যমে হিসাববিজ্ঞানের মৌলিক নীতি, উচ্চমাধ্যমিক বোর্ডের প্রস্তুতি ও সঠিক বোঝাপড়া দেশের প্রত্যন্ত অঞ্চলের শিক্ষার্থীদের ঘরে ঘরে বিনামূল্যে পৌঁছে দেওয়ার উদ্যোগ নিয়েছি।"
+    },
+    "bioCivic": {
+      "en": "Active citizenship is the natural extension of education. As a Trustee of REMA Trust and through leadership at Chattogram Laboratory School and College, I work to expand educational scholarships, community healthcare, and institutional excellence for those who need it most.",
+      "bn": "শিক্ষকতার পাশাপাশি রেমা (REMA) ট্রাস্ট এবং চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজের গভর্নিং বডিতে থেকে সমাজের পিছিয়ে পড়া শিক্ষার্থীদের পাশে দাঁড়ানো, বৃত্তি সহায়তা ও সামাজিক মানোন্নয়নে সক্রিয় ভূমিকা রাখা আমার নাগরিক দায়িত্ব।"
+    },
+    "fullNameBn": "প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের",
+    "shortNameBn": "বাহার জোবায়ের"
+  },
+  "teachingPillars": [
+    {
+      "id": "pillar-1",
+      "titleEn": "Conceptual Accounting Mastery",
+      "titleBn": "হিসাববিজ্ঞানের সহজ ও মৌলিক ভিত্তি",
+      "descEn": "Transforming abstract financial equations and ledger worksheets into crystal-clear mental frameworks that eliminate fear.",
+      "descBn": "কঠিন জাবেদা, খতিয়ান বা আর্থিক বিবরণীকে ভীতিমুক্ত করে বাস্তব উদাহরণের মাধ্যমে প্রাঞ্জলভাবে তুলে ধরা।"
+    },
+    {
+      "id": "pillar-2",
+      "titleEn": "Academic Excellence for HSC & Degree",
+      "titleBn": "এইচএসসি ও ডিগ্রি স্তরের ফলাফল নিশ্চিতকরণ",
+      "descEn": "Proven methodologies that have propelled tens of thousands of students into top public universities and corporate careers.",
+      "descBn": "বোর্ড পরীক্ষার সেরা প্রস্তুতি এবং উচ্চশিক্ষা ও ব্যবসায় প্রশাসনে ভর্তির মজবুত ভিত্তি গড়ে তোলা।"
+    },
+    {
+      "id": "pillar-3",
+      "titleEn": "Ethical Leadership & Character Building",
+      "titleBn": "নৈতিক মূল্যবোধ ও সততার শিক্ষা",
+      "descEn": "Teaching students that an accountant's true signature is unquestionable integrity, accountability, and discipline.",
+      "descBn": "হিসাবের প্রতিটি অঙ্কের সাথে সত্যবাদিতা, সততা ও মানবিক মূল্যবোধের নিবিড় চর্চা।"
+    }
+  ],
+  "socialInitiatives": [
+    {
+      "id": "social-1",
+      "orgName": "REMA Trust",
+      "role": "Member & Trustee",
+      "roleBn": "সম্মানিত ট্রাস্টি সদস্য",
+      "tagline": "Social Welfare, Healthcare & Student Scholarships",
+      "descEn": "Driving philanthropic initiatives providing scholarships for underprivileged meritorious students, medical aid, and community assistance in Chattogram.",
+      "descBn": "অসচ্ছল অথচ মেধাবী শিক্ষার্থীদের শিক্ষাবৃত্তি, চিকিৎসা সহায়তা ও প্রান্তিক জনগোষ্ঠীর জীবনমান উন্নয়নে সক্রিয় অবদান।"
+    },
+    {
+      "id": "social-2",
+      "orgName": "Chattogram Laboratory School and College",
+      "role": "Governing Body Member & Patron",
+      "roleBn": "পরিচালনা পর্ষদের সম্মানিত সদস্য",
+      "tagline": "School Governance & Academic Quality Improvement",
+      "descEn": "Guiding institutional policy, modern curriculum delivery, teacher mentorship, and academic governance for future-ready school education.",
+      "descBn": "বিদ্যালয়ের শিক্ষাব্যবস্থার আধুনিকায়ন, শৃঙ্খলা রক্ষা ও গুণগত মান বৃদ্ধির নীতি নির্ধারণে প্রত্যক্ষ নেতৃত্ব।"
+    },
+    {
+      "id": "social-3",
+      "orgName": "Omargani M.E.S. College, Chattogram",
+      "role": "Assistant Professor & Head of Accounting",
+      "roleBn": "সহকারী অধ্যাপক ও বিভাগীয় প্রধান (হিসাববিজ্ঞান)",
+      "tagline": "Departmental Leadership & 30+ Years of Direct Mentorship",
+      "descEn": "Guiding faculty, organizing academic seminars, managing examination boards, and teaching generations of HSC and BBA students.",
+      "descBn": "বিভাগীয় নেতৃত্ব প্রদান, শিক্ষক-শিক্ষার্থী সমন্বয় এবং দীর্ঘ তিন দশক ধরে সরাসরি হাজার হাজার শিক্ষার্থীর শিক্ষাদান।"
+    }
+  ],
+  "featuredVideos": [
+    {
+      "id": "vid-1",
+      "youtubeId": "VWwI4KN2N7M",
+      "titleEn": "[Placeholder Video] HSC Accounting 1st Paper: Core Ledger & Worksheet Walkthrough",
+      "titleBn": "[নমুনা ভিডিও] এইচএসসি হিসাববিজ্ঞান ১ম পত্র: কার্যপত্র ও খতিয়ানের সহজ সমাধান",
+      "category": "Video Placeholder"
+    },
+    {
+      "id": "vid-2",
+      "youtubeId": "iOLclVXkLEo",
+      "titleEn": "[Placeholder Video] Accounting Equations & Board Exam Creative Solutions",
+      "titleBn": "[নমুনা ভিডিও] হিসাব সমীকরণ ও বিগত বছরের বোর্ড প্রশ্ন সমাধান",
+      "category": "Video Placeholder"
+    },
+    {
+      "id": "vid-3",
+      "youtubeId": "r3St3_ro6eg",
+      "titleEn": "[Placeholder Video] Financial Statements & Adjusting Entries Masterclass",
+      "titleBn": "[নমুনা ভিডিও] আর্থিক বিবরণী ও সমন্বয় জাবেদার বিস্তারিত ক্লাস",
+      "category": "Video Placeholder"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art-1",
+      "slug": "placeholder-accounting-life-lesson",
+      "isPlaceholder": true,
+      "titleEn": "[Placeholder Article 1] Why Accounting is the Language of Life, Not Just Business",
+      "titleBn": "[নমুনা প্রবন্ধ ১] হিসাববিজ্ঞান কেন কেবল ব্যবসার নয়, জীবনেরও ভাষা",
+      "date": "2026-11-20",
+      "excerptEn": "[Placeholder Preview] A conceptual essay on how financial discipline, moral ethics, and balancing accounts build human character. Replace with Sir's actual writing via Admin.",
+      "excerptBn": "[নমুনা বিবরণ] আর্থিক শৃঙ্খলা, সততা ও হিসাববিজ্ঞানের মূল নীতি কীভাবে মানুষের চরিত্র গঠন করে। স্যার চাইলে অ্যাডমিন পোর্টাল থেকে নিজের লেখা দিয়ে পরিবর্তন করতে পারবেন।",
+      "contentEn": "[Placeholder Text Content]\n\nThroughout my thirty years in the classroom, the most frequent fear from young learners is: \"Sir, balancing ledgers feels overwhelming.\"\n\nAccounting was never meant to intimidate. It is the science of trust, truth, and reciprocity. Every debit has a corresponding credit—just as every privilege in life carries a responsibility.\n\n(This placeholder article can be replaced, updated, or removed anytime through the Admin Portal.)",
+      "contentBn": "[নমুনা মূল প্রবন্ধ]\n\nচট্টগ্রামের শ্রেণীকক্ষে দীর্ঘ তিন দশক ধরে যখনই শিক্ষার্থীদের সামনে দাঁড়িয়েছি, একটি বিষয় স্পষ্ট দেখেছি—হিসাববিজ্ঞানের জটিল অঙ্কগুলোকে তারা অনেক সময় ভয় পায়।\n\nকিন্তু হিসাববিজ্ঞান ভয়ের বিষয় নয়; এটি সততা, শৃঙ্খলা ও জীবনের প্রতিচ্ছবি। একটি ডেবিটের বিপরীতে যেমন সমপরিমাণ ক্রেডিট নিশ্চিত করতে হয়, তেমনি জীবনের প্রতিটি সুযোগের সাথে একটি দায়িত্বও জড়িয়ে থাকে।\n\n(এই নমুনা প্রবন্ধটি অ্যাডমিন ড্যাশবোর্ড থেকে সহজেই পরিবর্তন, নতুন লেখা দিয়ে প্রতিস্থাপন বা মুছে ফেলা যাবে।)"
+    },
+    {
+      "id": "art-2",
+      "slug": "placeholder-digital-classroom-mission",
+      "isPlaceholder": true,
+      "titleEn": "[Placeholder Article 2] Beyond Four Walls: Reaching Every Student Through Online Lectures",
+      "titleBn": "[নমুনা প্রবন্ধ ২] চার দেয়ালের ক্লাসরুম পেরিয়ে: প্রত্যন্ত অঞ্চলের শিক্ষার্থীদের পাশে",
+      "date": "2026-11-10",
+      "excerptEn": "[Placeholder Preview] Reflections on recording digital video classes and helping students across Bangladesh prepare for board examinations.",
+      "excerptBn": "[নমুনা বিবরণ] করোনাকালে ক্লাসরুমের বাইরে এসে অনলাইনে ভিডিও ক্লাস শুরু করা এবং সারা দেশের শিক্ষার্থীদের বিনামূল্যে শিক্ষা পৌঁছে দেওয়া নিয়ে স্মৃতিচারণ।",
+      "contentEn": "[Placeholder Text Content]\n\nEducation must not be restricted to those who can sit inside city colleges. Through recorded classes, students in distant upazilas and villages can learn foundational accounting principles free of cost.\n\n(This placeholder article can be customized or replaced anytime in the Admin Portal.)",
+      "contentBn": "[নমুনা মূল প্রবন্ধ]\n\nশিক্ষা কেবল বড় শহরের নামী শিক্ষাপ্রতিষ্ঠানের গণ্ডির মধ্যে সীমাবদ্ধ থাকা উচিত নয়। প্রযুক্তির সহায়তায় দেশের প্রত্যন্ত অঞ্চলের একজন শিক্ষার্থীও যেন ঘরে বসে সহজে বোর্ড পরীক্ষার প্রস্তুতি নিতে পারে—সেটিই আমাদের মূল লক্ষ্য।\n\n(এই লেখাটি নমুনা হিসেবে যুক্ত রয়েছে। স্যারের আসল বক্তব্য বা কোনো নতুন লেখা এখানে অ্যাডমিন থেকে যুক্ত করা যাবে।)"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "img-1",
+      "url": "/uploads/bahar_zubair_portrait.jpg",
+      "captionEn": "[Portrait Placeholder] Professor Bahar Uddin Md. Zubair",
+      "captionBn": "[প্রতিকৃতি নমুনা] প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের"
+    },
+    {
+      "id": "img-2",
+      "url": "https://placehold.co/600x400/FAF9F5/7F5539?text=Classroom+Lecture+Photo+(Placeholder)",
+      "captionEn": "[Placeholder Image 1] Classroom Lecture Session with Students",
+      "captionBn": "[নমুনা ছবি ১] শিক্ষার্থীদের সাথে শ্রেণীকক্ষে পাঠদানের মুহূর্ত"
+    },
+    {
+      "id": "img-3",
+      "url": "https://placehold.co/600x400/FAF9F5/2D5A43?text=REMA+Trust+Meeting+(Placeholder)",
+      "captionEn": "[Placeholder Image 2] REMA Trust Executive Council & Scholarship Award",
+      "captionBn": "[নমুনা ছবি ২] রেমা ট্রাস্টের সভা ও শিক্ষাবৃত্তি প্রদান"
+    },
+    {
+      "id": "img-4",
+      "url": "https://placehold.co/600x400/FAF9F5/1A1917?text=Ctg+Laboratory+School+(Placeholder)",
+      "captionEn": "[Placeholder Image 3] Chattogram Laboratory School & College Governance Meeting",
+      "captionBn": "[নমুনা ছবি ৩] চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজের পরিচালনা পর্ষদ"
+    },
+    {
+      "id": "img-5",
+      "url": "https://placehold.co/600x400/FAF9F5/7F5539?text=Departmental+Seminar+(Placeholder)",
+      "captionEn": "[Placeholder Image 4] Department of Accounting Faculty Seminar",
+      "captionBn": "[নমুনা ছবি ৪] হিসাববিজ্ঞান বিভাগের শিক্ষক ও সেমিনার"
+    },
+    {
+      "id": "img-6",
+      "url": "https://placehold.co/600x400/FAF9F5/2D5A43?text=Convocation+Alumni+Moment+(Placeholder)",
+      "captionEn": "[Placeholder Image 5] Student Graduation & Mentorship Memory",
+      "captionBn": "[নমুনা ছবি ৫] প্রাক্তন শিক্ষার্থীদের সাথে স্মৃতিচারণ মুহূর্ত"
+    }
+  ],
+  "contact": {
+    "email": "baharzubair@gmail.com",
+    "institution": "Omargani M.E.S. College, Zakir Hossain Road, Nasirabad, Chattogram",
+    "department": "Department of Accounting",
+    "officeHours": "Available for educational seminars, academic councils, and student guidance."
+  }
+}
