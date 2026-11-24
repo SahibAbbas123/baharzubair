@@ -128,6 +128,18 @@
   ],
   "articles": [
     {
+      "id": "art-fb-development",
+      "slug": "chattogram-development-call",
+      "isPlaceholder": false,
+      "titleEn": "Chittagong Development Forum: Uplifting Regional Education & Infrastructure",
+      "titleBn": "বৃহত্তর চট্টগ্রাম উন্নয়ন সংগ্রাম কমিটি: উন্নয়ন ও শিক্ষার অগ্রগতি",
+      "date": "2026-11-23",
+      "excerptEn": "Reflections from the executive committee meeting on regional infrastructure, public welfare, and student support.",
+      "excerptBn": "বৃহত্তর চট্টগ্রাম উন্নয়ন সংগ্রাম কমিটির মাসিক সভায় গৃহীত প্রস্তাবনা ও ভবিষ্যৎ প্রজন্মের শিক্ষার সুযোগ সম্প্রসারণ নিয়ে আলোচনা।",
+      "contentEn": "Excerpts from Professor Bahar Zubair's address:\n\n\"বৃহত্তর চট্টগ্রাম উন্নয়ন সংগ্রাম কমিটির মাসিক সভায় : চট্টগ্রামের উন্নয়ন এর ডাক। শেয়ার ও কমেন্ট করে সহযোগিতা করুন।\"\n\nActive civic leadership is inseparable from educational dedication. When educators take responsibility for regional progress, our academic institutions thrive and our students inherit a fairer, more prosperous homeland.",
+      "contentBn": "প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের-এর বক্তব্য থেকে:\n\n\"বৃহত্তর চট্টগ্রাম উন্নয়ন সংগ্রাম কমিটির মাসিক সভায় : চট্টগ্রামের উন্নয়ন এর ডাক। শেয়ার ও কমেন্ট করে সহযোগিতা করুন।\"\n\nশিক্ষকতার পাশাপাশি সমাজের সামগ্রিক উন্নয়নে সোচ্চার হওয়া আমাদের সকলের নৈতিক দায়িত্ব। চট্টগ্রামের শিক্ষা ও অবকাঠামোগত মানোন্নয়নে শিক্ষক সমাজের সক্রিয় অংশগ্রহণ আগামীর শিক্ষার্থীদের জন্য এক উজ্জ্বল ভবিষ্যৎ রচনা করবে।"
+    },
+    {
       "id": "art-1",
       "slug": "accounting-the-language-of-life",
       "isPlaceholder": false,
@@ -178,46 +190,46 @@
   ],
   "gallery": [
     {
-      "id": "img-1",
+      "id": "img-portrait",
       "url": "/uploads/bahar_zubair_portrait.jpg",
       "captionEn": "Professor Bahar Uddin Md. Zubair — Assistant Professor & Head of Accounting",
       "captionBn": "প্রফেসর বাহার উদ্দিন মোঃ জোবায়ের — সহকারী অধ্যাপক ও বিভাগীয় প্রধান (হিসাববিজ্ঞান)"
     },
     {
-      "id": "img-2",
-      "url": "/uploads/archive_lecture.svg",
-      "captionEn": "Classroom Lecture Session — Interactive ledger instruction at Omargani M.E.S. College",
-      "captionBn": "শ্রেণীকক্ষে পাঠদান — ওমরগনি এম.ই.এস. কলেজের লেকচার হলে সরাসরি হিসাববিজ্ঞান ক্লাস"
+      "id": "fb-img-1",
+      "url": "/uploads/facebook/fb_photo_1.jpg",
+      "captionEn": "Executive Council Session & Regional Development — Chattogram",
+      "captionBn": "বৃহত্তর চট্টগ্রাম উন্নয়ন সংগ্রাম কমিটির সভায় বক্তব্য ও দিকনির্দেশনা"
     },
     {
-      "id": "img-3",
-      "url": "/uploads/archive_rema.svg",
-      "captionEn": "REMA Trust Executive Session — Meritorious scholarship & community aid disbursement",
-      "captionBn": "রেমা ট্রাস্ট কার্যনির্বাহী সভা — মেধাবী শিক্ষার্থীদের শিক্ষাবৃত্তি ও সমাজকল্যাণ কর্মসূচি"
+      "id": "fb-img-2",
+      "url": "/uploads/facebook/fb_photo_2.jpg",
+      "captionEn": "Chattogram Laboratory School & College — Academic Session",
+      "captionBn": "চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজের শিক্ষাবর্ষ ও পরিচালনা পর্ষদ"
     },
     {
-      "id": "img-4",
-      "url": "/uploads/archive_lab_school.svg",
-      "captionEn": "Chattogram Laboratory School & College — Governing council academic review session",
-      "captionBn": "চট্টগ্রাম ল্যাবরেটরি স্কুল অ্যান্ড কলেজ — পরিচালনা পর্ষদের গুণগত মানোন্নয়ন সভা"
+      "id": "fb-img-3",
+      "url": "/uploads/facebook/fb_photo_3.jpg",
+      "captionEn": "Classroom Mentorship & Student Guidance Session",
+      "captionBn": "শিক্ষার্থীদের সাথে শ্রেণীকক্ষে সরাসরি মতবিনিময় ও দিকনির্দেশনা"
     },
     {
-      "id": "img-5",
-      "url": "/uploads/archive_seminar.svg",
-      "captionEn": "Departmental Seminar — Ethical principles and modern accounting frameworks",
-      "captionBn": "বিভাগীয় সেমিনার — হিসাববিজ্ঞানের আধুনিক প্রয়োগ ও নৈতিক মূল্যবোধ বিষয়ক আলোচনা"
+      "id": "fb-img-4",
+      "url": "/uploads/facebook/fb_photo_4.jpg",
+      "captionEn": "Academic Life & Institutional Gathering — Record 4",
+      "captionBn": "শিক্ষকতা জীবন ও প্রাতিষ্ঠানিক মুহূর্ত 4"
     },
     {
-      "id": "img-6",
-      "url": "/uploads/archive_alumni.svg",
-      "captionEn": "Alumni Mentorship Fellowship — Celebrating 30+ years of guided student leaders",
-      "captionBn": "প্রাক্তন শিক্ষার্থী ও শিক্ষক পুনর্মিলন — তিন দশকের ছাত্র-শিক্ষক বন্ধন ও স্মৃতিচারণ"
+      "id": "fb-img-5",
+      "url": "/uploads/facebook/fb_photo_5.jpg",
+      "captionEn": "Academic Life & Institutional Gathering — Record 5",
+      "captionBn": "শিক্ষকতা জীবন ও প্রাতিষ্ঠানিক মুহূর্ত 5"
     },
     {
-      "id": "img-7",
-      "url": "/uploads/archive_board.svg",
-      "captionEn": "HSC Examination Evaluation & Curriculum Council — Educational development forum",
-      "captionBn": "উচ্চমাধ্যমিক পরীক্ষা মূল্যায়ন ও পাঠ্যক্রম পরামর্শক ফোরাম"
+      "id": "fb-img-6",
+      "url": "/uploads/facebook/fb_photo_6.jpg",
+      "captionEn": "Academic Life & Institutional Gathering — Record 6",
+      "captionBn": "শিক্ষকতা জীবন ও প্রাতিষ্ঠানিক মুহূর্ত 6"
     }
   ],
   "contact": {
