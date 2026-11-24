@@ -123,6 +123,18 @@
     .marquee-wrapper:hover .marquee-track {
       animation-play-state: paused;
     }
+
+    /* Carousel Transition & Slide Styling */
+    .carousel-slide {
+      transition: opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .carousel-dot {
+      transition: all 0.25s ease;
+    }
+    .carousel-dot.active {
+      background-color: #1A1917;
+      width: 28px;
+    }
     @media (prefers-reduced-motion: reduce) {
       .marquee-track {
         animation: none;
@@ -366,7 +378,7 @@
       </div>
     </section>
 
-    <!-- PHOTO GALLERY & ARCHIVAL MOMENTS -->
+    <!-- PHOTO GALLERY & INTERACTIVE ROTATING SHOWCASE -->
     <section class="border-t border-bordercol pt-14 space-y-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
@@ -375,20 +387,48 @@
           </h2>
           <p id="sectionGallerySubtitle" class="text-muted text-sm mt-1">Archival records, classroom gatherings, and institutional milestones.</p>
         </div>
-        <span class="text-xs text-muted font-mono flex items-center gap-1.5 self-start sm:self-auto bg-black/[0.03] px-2.5 py-1 rounded border border-bordercol">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-hunter animate-pulse"></span>
-          <span>Hover to inspect & pause</span>
-        </span>
+        
+        <!-- Carousel Controls -->
+        <div class="flex items-center gap-2 self-start sm:self-auto">
+          <button id="carouselPrevBtn" onclick="prevCarouselSlide()" aria-label="Previous Slide" class="p-2 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] transition tactile-card">
+            <svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="carouselPlayPauseBtn" onclick="toggleCarouselAutoplay()" aria-label="Toggle Autoplay" class="px-2.5 py-1.5 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] transition text-xs font-mono text-muted flex items-center gap-1.5">
+            <span id="carouselAutoplayIndicator" class="w-2 h-2 rounded-full bg-hunter animate-pulse"></span>
+            <span id="carouselAutoplayText">Auto (5s)</span>
+          </button>
+          <button id="carouselNextBtn" onclick="nextCarouselSlide()" aria-label="Next Slide" class="p-2 rounded-lg border border-bordercol bg-surface hover:bg-black/[0.04] transition tactile-card">
+            <svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Featured Interactive Rotating Carousel Display -->
+      <div id="carouselWrapper" class="relative rounded-2xl overflow-hidden border border-bordercol bg-black/5 shadow-sm group">
+        <div id="carouselSlidesContainer" class="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden bg-surface">
+          <!-- Slide items rendered via JS -->
+        </div>
+
+        <!-- Dot Pagination Indicator -->
+        <div id="carouselDotsContainer" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full">
+          <!-- Dots rendered via JS -->
+        </div>
       </div>
 
       <!-- Auto-Scrolling Marquee Ribbon -->
-      <div class="marquee-wrapper overflow-hidden relative rounded-xl border border-bordercol bg-surface py-4 select-none">
-        <!-- Soft Edge Fade Masks -->
-        <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface to-transparent z-10"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface to-transparent z-10"></div>
-        
-        <div id="marqueeTrack" class="marquee-track flex items-center gap-5 px-4">
-          <!-- Marquee items populated dynamically via JS -->
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs text-muted">
+          <span class="uppercase tracking-wider font-medium text-[11px]">Continuous Visual Archive</span>
+          <span class="font-mono text-[11px]">Hover to pause</span>
+        </div>
+        <div class="marquee-wrapper overflow-hidden relative rounded-xl border border-bordercol bg-surface py-4 select-none">
+          <!-- Soft Edge Fade Masks -->
+          <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-surface to-transparent z-10"></div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-surface to-transparent z-10"></div>
+          
+          <div id="marqueeTrack" class="marquee-track flex items-center gap-5 px-4">
+            <!-- Marquee items populated dynamically via JS -->
+          </div>
         </div>
       </div>
 
@@ -465,6 +505,112 @@
   <script>
     let currentLang = localStorage.getItem('site_lang') || 'en';
     let siteData = null;
+    let currentCarouselIndex = 0;
+    let carouselAutoplayInterval = null;
+    let isAutoplayActive = true;
+
+    // Carousel Controller Functions
+    function initCarousel() {
+      if (!siteData || !siteData.gallery || siteData.gallery.length === 0) return;
+      renderCarouselSlides();
+      startCarouselAutoplay();
+    }
+
+    function renderCarouselSlides() {
+      const container = document.getElementById('carouselSlidesContainer');
+      const dotsCont = document.getElementById('carouselDotsContainer');
+      if (!container || !dotsCont || !siteData || !siteData.gallery) return;
+
+      const items = siteData.gallery;
+      const isBn = currentLang === 'bn';
+
+      container.innerHTML = items.map((g, idx) => {
+        const isActive = idx === currentCarouselIndex;
+        return `
+          <div class="carousel-slide absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-98 pointer-events-none'}">
+            <img src="${g.url}" alt="${g.captionEn}" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8">
+              <span class="text-[10px] font-mono tracking-wider text-white/70 uppercase">ARCHIVE 0${idx + 1} OF 0${items.length}</span>
+              <p class="font-serif text-lg sm:text-2xl text-white font-medium max-w-2xl leading-snug mt-1">
+                ${isBn ? (g.captionBn || g.captionEn) : g.captionEn}
+              </p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      dotsCont.innerHTML = items.map((_, idx) => {
+        const isActive = idx === currentCarouselIndex;
+        return `
+          <button onclick="goToCarouselSlide(${idx})" aria-label="Slide ${idx + 1}" class="carousel-dot h-2 rounded-full transition-all duration-300 ${isActive ? 'w-6 bg-white' : 'w-2 bg-white/40 hover:bg-white/70'}"></button>
+        `;
+      }).join('');
+    }
+
+    function nextCarouselSlide() {
+      if (!siteData || !siteData.gallery) return;
+      currentCarouselIndex = (currentCarouselIndex + 1) % siteData.gallery.length;
+      renderCarouselSlides();
+    }
+
+    function prevCarouselSlide() {
+      if (!siteData || !siteData.gallery) return;
+      currentCarouselIndex = (currentCarouselIndex - 1 + siteData.gallery.length) % siteData.gallery.length;
+      renderCarouselSlides();
+    }
+
+    function goToCarouselSlide(idx) {
+      currentCarouselIndex = idx;
+      renderCarouselSlides();
+      resetCarouselTimer();
+    }
+
+    function startCarouselAutoplay() {
+      stopCarouselAutoplay();
+      carouselAutoplayInterval = setInterval(() => {
+        nextCarouselSlide();
+      }, 5000);
+      isAutoplayActive = true;
+      updateAutoplayUI();
+    }
+
+    function stopCarouselAutoplay() {
+      if (carouselAutoplayInterval) {
+        clearInterval(carouselAutoplayInterval);
+        carouselAutoplayInterval = null;
+      }
+    }
+
+    function toggleCarouselAutoplay() {
+      if (isAutoplayActive) {
+        stopCarouselAutoplay();
+        isAutoplayActive = false;
+      } else {
+        startCarouselAutoplay();
+        isAutoplayActive = true;
+      }
+      updateAutoplayUI();
+    }
+
+    function resetCarouselTimer() {
+      if (isAutoplayActive) {
+        startCarouselAutoplay();
+      }
+    }
+
+    function updateAutoplayUI() {
+      const text = document.getElementById('carouselAutoplayText');
+      const dot = document.getElementById('carouselAutoplayIndicator');
+      if (text && dot) {
+        if (isAutoplayActive) {
+          text.textContent = "Auto (5s)";
+          dot.className = "w-2 h-2 rounded-full bg-hunter animate-pulse";
+        } else {
+          text.textContent = "Paused";
+          dot.className = "w-2 h-2 rounded-full bg-muted";
+        }
+      }
+    }
 
     // Scroll reading progress
     window.addEventListener('scroll', () => {
@@ -722,6 +868,10 @@
           </div>
         </article>
       `).join('');
+
+      // Render Rotating Carousel
+      renderCarouselSlides();
+      startCarouselAutoplay();
 
       // Gallery & Auto-scrolling Marquee
       document.getElementById('sectionGalleryTitle').textContent = isBn ? "স্মৃতি ও আলোকচিত্র" : "Memories & Campus Moments";

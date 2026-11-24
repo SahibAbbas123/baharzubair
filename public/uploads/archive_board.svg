@@ -1,39 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#312E81"/>
-      <stop offset="100%" stop-color="#1E1B4B"/>
+    <linearGradient id="bg_CURRICULUM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F0D2E"/>
     </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <radialGradient id="glow_CURRICULUM" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#818CF8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid_CURRICULUM" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect width="800" height="500" fill="url(#bg)"/>
-  <rect width="800" height="500" fill="url(#grid)"/>
-  <circle cx="700" cy="80" r="140" fill="rgba(255,255,255,0.04)"/>
-  <circle cx="100" cy="420" r="180" fill="rgba(255,255,255,0.03)"/>
   
-  <!-- Architectural badge -->
-  <g transform="translate(60, 60)">
-    <rect width="140" height="32" rx="16" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)"/>
-    <text x="70" y="21" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" letter-spacing="1" text-anchor="middle">ACCREDITATION</text>
+  <!-- Base Background -->
+  <rect width="1200" height="700" fill="url(#bg_CURRICULUM)"/>
+  <rect width="1200" height="700" fill="url(#glow_CURRICULUM)"/>
+  <rect width="1200" height="700" fill="url(#grid_CURRICULUM)"/>
+  
+  <!-- Architectural Corner Guides -->
+  <path d="M 40 80 L 40 40 L 80 40" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+  <path d="M 1160 80 L 1160 40 L 1120 40" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+  <path d="M 40 620 L 40 660 L 80 660" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+  <path d="M 1160 620 L 1160 660 L 1120 660" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+
+  <!-- Top Metadata Bar -->
+  <g transform="translate(80, 80)">
+    <rect width="160" height="34" rx="6" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)"/>
+    <text x="80" y="22" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">CURRICULUM</text>
+    <text x="190" y="22" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="12">ARCHIVE REF: 1994–2026 // HISTORICAL DOCUMENT</text>
   </g>
 
-  <!-- Graphic emblem -->
-  <g transform="translate(660, 80)" stroke="rgba(255,255,255,0.25)" fill="none" stroke-width="2">
-    <circle cx="0" cy="0" r="45"/>
-    <circle cx="0" cy="0" r="30"/>
-    <line x1="-20" y1="0" x2="20" y2="0"/>
-    <line x1="0" y1="-20" x2="0" y2="20"/>
+  <!-- Large Central Visual Emblem -->
+  <g transform="translate(900, 350)" stroke="rgba(255,255,255,0.2)" fill="none" stroke-width="1.5">
+    <circle cx="0" cy="0" r="180"/>
+    <circle cx="0" cy="0" r="140" stroke-dasharray="6,6"/>
+    <circle cx="0" cy="0" r="100"/>
+    <circle cx="0" cy="0" r="40" fill="#818CF8" fill-opacity="0.2"/>
+    <rect x="-24" y="-30" width="48" height="60" rx="4" stroke="#818CF8" stroke-width="2"/>
+   <line x1="-14" y1="-14" x2="14" y2="-14" stroke="#818CF8" stroke-width="2"/>
+   <line x1="-14" y1="0" x2="14" y2="0" stroke="#818CF8" stroke-width="2"/>
+   <line x1="-14" y1="14" x2="4" y2="14" stroke="#818CF8" stroke-width="2"/>
   </g>
-  
-  <!-- Typography -->
-  <g transform="translate(60, 260)">
-    <text x="0" y="0" fill="#FFFFFF" font-family="Georgia, serif" font-size="34" font-weight="bold">HSC Exam Formulation Council</text>
-    <text x="0" y="45" fill="rgba(255,255,255,0.75)" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18">Curriculum Committee & Evaluation</text>
+
+  <!-- Title & Narrative Block -->
+  <g transform="translate(80, 380)">
+    <line x1="0" y1="-80" x2="160" y2="-80" stroke="#818CF8" stroke-width="3"/>
+    <text x="0" y="-20" fill="#FFFFFF" font-family="Georgia, serif" font-size="52" font-weight="bold">Board Examination Evaluation Council</text>
+    <text x="0" y="36" fill="rgba(255,255,255,0.85)" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="400" max-width="700">Formulating standard question rubrics, creative question sets, and evaluation frameworks for HSC students.</text>
   </g>
-  
-  <!-- Bottom bar -->
-  <line x1="60" y1="420" x2="740" y2="420" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-  <text x="60" y="445" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="12">ARCHIVAL RECORD • DEPT OF ACCOUNTING • CHATTOGRAM</text>
+
+  <!-- Bottom Archival Stamp -->
+  <g transform="translate(80, 580)">
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="0" y="35" fill="rgba(255,255,255,0.6)" font-family="monospace" font-size="13">FACULTY OF BUSINESS STUDIES &bull; OMARGANI M.E.S. COLLEGE, CHATTOGRAM &bull; FOUNDATION FOR EXCELLENCE</text>
+  </g>
 </svg>
