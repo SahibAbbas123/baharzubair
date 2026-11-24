@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "playwright": "^1.65.1"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
